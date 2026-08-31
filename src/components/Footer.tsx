@@ -5,6 +5,7 @@ import {
   Mail,
   Clock,
   MessageCircle,
+  Instagram,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Separator } from "@/components/ui/separator";
@@ -90,6 +91,17 @@ export function Footer() {
                 >
                   <MessageCircle className="h-4 w-4 text-gold/60 shrink-0" />
                   WhatsApp Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href={COMPANY.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"
+                >
+                  <Instagram className="h-4 w-4 text-gold/60 shrink-0" />
+                  @adjtrucks
                 </a>
               </li>
             </ul>

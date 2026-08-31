@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Instagram } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { COMPANY, PAGE_BACKGROUNDS } from "@/lib/constants";
@@ -94,6 +94,20 @@ export default function ContactPage() {
                         <p className="text-muted-foreground">
                           Chat with us instantly
                         </p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={COMPANY.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-3 text-sm hover:text-gold transition-colors"
+                    >
+                      <Instagram className="h-5 w-5 text-gold/60 shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-medium">Instagram</p>
+                        <p className="text-muted-foreground">@adjtrucks</p>
                       </div>
                     </a>
                   </li>

@@ -32,6 +32,7 @@ export const COMPANY = {
   },
   social: {
     whatsapp: "https://wa.me/27796697147",
+    instagram: "https://www.instagram.com/adjtrucks/",
   },
 } as const;
 
