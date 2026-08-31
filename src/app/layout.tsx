@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, SITE_OG_IMAGE } from "@/lib/constants";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -12,8 +12,14 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://adjtrucks.co.za");
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adjtrucks.co.za"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${COMPANY.name} | ${COMPANY.fullName} - Commercial Vehicle Dealership`,
     template: `%s | ${COMPANY.name}`,
@@ -36,16 +42,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    url: "https://adjtrucks.co.za",
+    url: siteUrl,
     siteName: COMPANY.name,
     title: `${COMPANY.name} | Premium Commercial Vehicles`,
     description: COMPANY.slogan,
     images: [
       {
-        url: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=80",
+        url: SITE_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "ADJ TRUCKS - Commercial Vehicle Dealership",
+        alt: `${COMPANY.name} - ${COMPANY.fullName}`,
       },
     ],
   },
@@ -53,6 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${COMPANY.name} | Premium Commercial Vehicles`,
     description: COMPANY.slogan,
+    images: [SITE_OG_IMAGE],
   },
   robots: {
     index: true,
