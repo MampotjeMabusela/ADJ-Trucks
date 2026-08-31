@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" fill="none" role="img" aria-label="ADJ TRUCKS - Albert de Jongh Trucks">
+  <defs>
+    <linearGradient id="adjGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E7A9"/>
+      <stop offset="28%" stop-color="#F5D78E"/>
+      <stop offset="55%" stop-color="#E8C060"/>
+      <stop offset="100%" stop-color="#B8891E"/>
+    </linearGradient>
+    <linearGradient id="adjGoldDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EED995"/>
+      <stop offset="100%" stop-color="#A87418"/>
+    </linearGradient>
+    <linearGradient id="adjGoldText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1C7"/>
+      <stop offset="45%" stop-color="#F0D078"/>
+      <stop offset="100%" stop-color="#CFA032"/>
+    </linearGradient>
+    <linearGradient id="adjSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6E6E6E"/>
+      <stop offset="35%" stop-color="#F0F0F0"/>
+      <stop offset="65%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#6E6E6E"/>
+    </linearGradient>
+    <linearGradient id="adjShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C9A227" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#7A5A12" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Truck icon -->
+  <g transform="translate(88 118)">
+    <!-- Cargo bed -->
+    <path
+      d="M118 118 L118 182 L292 182 L292 142 L248 118 Z"
+      fill="url(#adjGold)"
+    />
+    <path
+      d="M118 118 L248 118 L292 142 L118 142 Z"
+      fill="url(#adjGoldDeep)"
+      opacity="0.55"
+    />
+    <!-- Cab body -->
+    <path
+      d="M8 182 L8 118 L44 82 L108 82 L118 118 L118 182 Z"
+      fill="url(#adjGold)"
+    />
+    <!-- Windscreen -->
+    <path
+      d="M44 88 L98 88 L112 118 L58 118 Z"
+      fill="url(#adjGoldDeep)"
+      opacity="0.45"
+    />
+    <!-- Cab highlight -->
+    <path
+      d="M18 118 L34 92 L72 92 L88 118 Z"
+      fill="#FFF6D6"
+      opacity="0.22"
+    />
+    <!-- Underbody shadow -->
+    <path
+      d="M8 182 L292 182 L292 194 L8 194 Z"
+      fill="url(#adjShadow)"
+    />
+    <!-- Wheels -->
+    <circle cx="62" cy="206" r="28" fill="#101012" stroke="url(#adjSilver)" stroke-width="7"/>
+    <circle cx="236" cy="206" r="28" fill="#101012" stroke="url(#adjSilver)" stroke-width="7"/>
+    <circle cx="62" cy="206" r="10" fill="#2A2A2D"/>
+    <circle cx="236" cy="206" r="10" fill="#2A2A2D"/>
+  </g>
+
+  <!-- ADJ TRUCKS -->
+  <text
+    x="430"
+    y="248"
+    fill="url(#adjGoldText)"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-size="118"
+    font-weight="900"
+    letter-spacing="4"
+  >ADJ TRUCKS</text>
+
+  <!-- ALBERT DE JONGH TRUCKS -->
+  <text
+    x="430"
+    y="332"
+    fill="url(#adjGoldText)"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="52"
+    font-weight="700"
+    letter-spacing="6"
+  >ALBERT DE JONGH TRUCKS</text>
+
+  <!-- Tagline -->
+  <text
+    x="430"
+    y="396"
+    fill="#A8A8A8"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="34"
+    font-weight="400"
+    letter-spacing="1.5"
+  >Retail &amp; Wholesale of Trucks | Since 2007</text>
+</svg>

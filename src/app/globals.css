@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 5% 5%;
+    --foreground: 0 0% 95%;
+    --card: 240 4% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 4% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 38 91% 55%;
+    --primary-foreground: 240 5% 5%;
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 38 91% 55%;
+    --accent-foreground: 240 5% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 38 91% 55%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply overflow-x-hidden scroll-smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-charcoal-deep;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-charcoal-light rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold/40;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-bottom {
+    bottom: max(1.5rem, env(safe-area-inset-bottom, 1.5rem));
+  }
+
+  .safe-right {
+    right: max(1.5rem, env(safe-area-inset-right, 1.5rem));
+  }
+}
