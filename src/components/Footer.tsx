@@ -138,6 +138,10 @@ export function Footer() {
             {COMPANY.since}
           </p>
         </div>
+
+        <p className="mt-6 pt-6 border-t border-white/5 text-center text-xs text-muted-foreground/80">
+          Website developed by Mampotje Mabusela
+        </p>
       </div>
     </footer>
   );
