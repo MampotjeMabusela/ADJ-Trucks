@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Chatbot } from "@/components/Chatbot";
 import { COMPANY, SITE_OG_IMAGE } from "@/lib/constants";
 import "./globals.css";
 
@@ -136,6 +137,7 @@ export default function RootLayout({
         <Navbar />
         <main className="pb-safe">{children}</main>
         <Footer />
+        <Chatbot />
         <WhatsAppButton />
       </body>
     </html>

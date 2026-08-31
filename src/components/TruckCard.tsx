@@ -50,17 +50,18 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4, delay: index * 0.05 }}
+        className="rounded-xl border border-white/5 bg-metallic-gradient hover:border-gold/30 transition-all duration-500 overflow-hidden"
       >
-        <Link
-          href={`/inventory/${truck.slug}`}
-          className="group flex flex-col md:flex-row gap-4 p-4 rounded-xl border border-white/5 bg-metallic-gradient hover:border-gold/30 transition-all duration-500"
-        >
-          <div className="relative w-full md:w-72 h-48 md:h-44 rounded-lg overflow-hidden shrink-0">
+        <div className="flex flex-col md:flex-row gap-4 p-4">
+          <Link
+            href={`/inventory/${truck.slug}`}
+            className="relative w-full md:w-72 h-48 md:h-44 rounded-lg overflow-hidden shrink-0 group/image"
+          >
             <Image
               src={truck.images[0]}
               alt={truck.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover/image:scale-105 transition-transform duration-700"
               sizes="(max-width: 768px) 100vw, 288px"
             />
             <span
@@ -71,17 +72,19 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
             >
               {truck.status}
             </span>
-          </div>
-          <div className="flex-1 flex flex-col justify-between">
+          </Link>
+          <div className="flex-1 flex flex-col justify-between min-w-0">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div className="min-w-0">
                   <p className="text-xs text-gold font-medium uppercase tracking-wider">
                     {truck.hideCategory ? truck.make : `${truck.make} · ${truck.category}`}
                   </p>
-                  <h3 className="text-lg font-bold mt-1 group-hover:text-gold transition-colors">
-                    {truck.title}
-                  </h3>
+                  <Link href={`/inventory/${truck.slug}`}>
+                    <h3 className="text-lg font-bold mt-1 hover:text-gold transition-colors">
+                      {truck.title}
+                    </h3>
+                  </Link>
                 </div>
                 <p className="text-xl font-bold text-gold shrink-0">
                   {formatPrice(truck.price)}
@@ -99,19 +102,28 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 mt-4">
-              <Button variant="outline" size="sm" className="flex-1">
-                <Eye className="h-4 w-4" />
-                View Details
+            <div className="grid grid-cols-2 gap-2 mt-4 max-w-md md:max-w-sm md:ml-auto w-full">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-10 w-full min-w-0 px-2 text-xs sm:text-sm"
+                asChild
+              >
+                <Link href={`/inventory/${truck.slug}`}>
+                  <Eye className="h-3.5 w-3.5 shrink-0" />
+                  <span className="truncate">Details</span>
+                </Link>
               </Button>
               <WhatsAppInquiryButton
                 truckTitle={truck.title}
                 truckId={truck.id}
-                className="flex-1 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold h-9 px-4 bg-[#25D366] text-white hover:bg-[#20BD5A] transition-all duration-300"
-              />
+                className="h-10 w-full min-w-0 inline-flex items-center justify-center gap-1.5 rounded-md px-2 text-xs sm:text-sm font-semibold bg-[#25D366] text-white hover:bg-[#20BD5A] transition-all duration-300"
+              >
+                Inquire
+              </WhatsAppInquiryButton>
             </div>
           </div>
-        </Link>
+        </div>
       </motion.div>
     );
   }
@@ -215,18 +227,25 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-2">
-            <Button variant="outline" size="sm" className="flex-1 min-h-[44px]" asChild>
+          <div className="grid grid-cols-2 gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-10 w-full min-w-0 px-2 text-xs sm:text-sm"
+              asChild
+            >
               <Link href={`/inventory/${truck.slug}`}>
-                <Eye className="h-4 w-4" />
-                Details
+                <Eye className="h-3.5 w-3.5 shrink-0" />
+                <span className="truncate">Details</span>
               </Link>
             </Button>
             <WhatsAppInquiryButton
               truckTitle={truck.title}
               truckId={truck.id}
-              className="flex-1 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold min-h-[44px] h-11 px-4 bg-[#25D366] text-white hover:bg-[#20BD5A] transition-all duration-300"
-            />
+              className="h-10 w-full min-w-0 inline-flex items-center justify-center gap-1.5 rounded-md px-2 text-xs sm:text-sm font-semibold bg-[#25D366] text-white hover:bg-[#20BD5A] transition-all duration-300"
+            >
+              Inquire
+            </WhatsAppInquiryButton>
           </div>
         </div>
       </div>

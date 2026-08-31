@@ -59,12 +59,13 @@ export function WhatsAppInquiryButton({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`Inquire about ${truckTitle} on WhatsApp`}
       className={
         className ??
         "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold h-11 px-6 bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg hover:shadow-[#25D366]/30 transition-all duration-300"
       }
     >
-      <MessageCircle className="h-4 w-4" />
+      <MessageCircle className="h-3.5 w-3.5 shrink-0" />
       {children ?? "Inquire on WhatsApp"}
     </Link>
   );

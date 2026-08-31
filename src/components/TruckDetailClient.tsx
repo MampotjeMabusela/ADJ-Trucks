@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { WhatsAppInquiryButton } from "@/components/WhatsAppButton";
+import { TruckShareButtons } from "@/components/TruckShareButtons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { COMPANY } from "@/lib/constants";
@@ -170,7 +171,7 @@ export function TruckDetailClient({ truck }: TruckDetailClientProps) {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <WhatsAppInquiryButton
                 truckTitle={truck.title}
                 truckId={truck.id}
@@ -180,6 +181,8 @@ export function TruckDetailClient({ truck }: TruckDetailClientProps) {
                 <a href={`tel:${COMPANY.contact.mobileRaw}`}>Call to Enquire</a>
               </Button>
             </div>
+
+            <TruckShareButtons truck={truck} className="mb-10" />
 
             <Separator className="mb-8" />
 

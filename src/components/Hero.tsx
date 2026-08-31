@@ -8,7 +8,7 @@ import { useState } from "react";
 import { FilterBar } from "@/components/FilterBar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, PAGE_BACKGROUNDS } from "@/lib/constants";
 import { trucks } from "@/data/trucks";
 import type { TruckFilters } from "@/types/truck";
 
@@ -40,9 +40,9 @@ export function Hero() {
       <div className="absolute inset-0 bg-charcoal-deep">
         <div className="absolute inset-0 bg-hero-gradient" />
         <div
-          className="absolute inset-0 opacity-[0.26] bg-cover bg-center"
+          className="absolute inset-0 opacity-40 bg-cover bg-center"
           style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80")`,
+            backgroundImage: `url("${PAGE_BACKGROUNDS.showroom}")`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-deep/42 via-charcoal-deep/56 to-charcoal-deep" />
