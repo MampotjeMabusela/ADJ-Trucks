@@ -50,8 +50,8 @@ export function Navbar() {
       )}
     >
       <nav className="container mx-auto px-4 lg:px-8">
-        <div className="flex h-20 sm:h-24 items-center justify-between gap-3">
-          <Logo size="lg" className="min-w-0 shrink" />
+        <div className="flex h-24 sm:h-28 md:h-32 items-center justify-between gap-3">
+          <Logo size="lg" className="min-w-0 shrink py-1" />
 
           <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
