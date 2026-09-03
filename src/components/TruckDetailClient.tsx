@@ -194,8 +194,6 @@ export function TruckDetailClient({ truck }: TruckDetailClientProps) {
                     ["Make", truck.make],
                     ["Model", truck.model],
                     ["Year", String(truck.year)],
-                    ["Category", truck.category],
-                    ["Engine", truck.specs.engine],
                     ["Transmission", truck.specs.transmission],
                     ["Fuel Type", truck.specs.fuelType],
                     ["Axle Configuration", truck.specs.axles],
@@ -203,7 +201,6 @@ export function TruckDetailClient({ truck }: TruckDetailClientProps) {
                     ...(truck.specs.payload
                       ? [["Payload Capacity", truck.specs.payload] as const]
                       : []),
-                    ...(truck.specs.vin ? [["VIN", truck.specs.vin] as const] : []),
                     ["Mileage", formatMileage(truck.mileage)],
                     ["Price", formatPrice(truck.price)],
                   ].map(([label, value], i) => (
