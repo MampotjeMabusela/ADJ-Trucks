@@ -13,6 +13,7 @@ import {
   Eye,
 } from "lucide-react";
 import { WhatsAppInquiryButton } from "@/components/WhatsAppButton";
+import { TruckCopyShareButton } from "@/components/TruckCopyShareButton";
 import { Button } from "@/components/ui/button";
 import { formatMileage, formatPrice, cn } from "@/lib/utils";
 import type { Truck } from "@/types/truck";
@@ -102,7 +103,7 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
                 </span>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-2 mt-4 max-w-md md:max-w-sm md:ml-auto w-full">
+            <div className="grid grid-cols-3 gap-2 mt-4 max-w-md md:max-w-sm md:ml-auto w-full">
               <Button
                 variant="outline"
                 size="sm"
@@ -114,6 +115,7 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
                   <span className="truncate">Details</span>
                 </Link>
               </Button>
+              <TruckCopyShareButton truck={truck} variant="compact" />
               <WhatsAppInquiryButton
                 truckTitle={truck.title}
                 truckId={truck.id}
@@ -227,7 +229,7 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-3 gap-2">
             <Button
               variant="outline"
               size="sm"
@@ -239,6 +241,7 @@ export function TruckCard({ truck, view = "grid", index = 0 }: TruckCardProps) {
                 <span className="truncate">Details</span>
               </Link>
             </Button>
+            <TruckCopyShareButton truck={truck} variant="compact" />
             <WhatsAppInquiryButton
               truckTitle={truck.title}
               truckId={truck.id}

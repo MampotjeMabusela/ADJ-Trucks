@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Chatbot } from "@/components/Chatbot";
 import { COMPANY, SITE_OG_IMAGE } from "@/lib/constants";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -13,11 +14,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://adjtrucks.co.za");
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

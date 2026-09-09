@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack: (config, { dev }) => {
+    // Avoid corrupted filesystem cache on Windows (common with spaced paths).
+    if (dev) {
+      config.cache = { type: "memory" };
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {

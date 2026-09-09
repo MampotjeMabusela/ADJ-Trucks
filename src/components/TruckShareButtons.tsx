@@ -5,10 +5,10 @@ import { Facebook, Instagram } from "lucide-react";
 import { TikTokIcon } from "@/components/icons/TikTokIcon";
 import { cn } from "@/lib/utils";
 import { COMPANY } from "@/lib/constants";
+import { TruckCopyShareButton } from "@/components/TruckCopyShareButton";
 import {
-  copyTruckShareLink,
+  copyTruckShareContent,
   getFacebookShareUrl,
-  getTruckShareMessage,
   getTruckShareUrl,
 } from "@/lib/share";
 import type { Truck } from "@/types/truck";
@@ -30,10 +30,9 @@ export function TruckShareButtons({ truck, className }: TruckShareButtonsProps) 
     setShareUrl(getTruckShareUrl(truck.slug));
   }, [truck.slug]);
 
-  const shareMessage = shareUrl ? getTruckShareMessage(truck, shareUrl) : getTruckShareMessage(truck, getTruckShareUrl(truck.slug));
-
   const handleCopyShare = async (platform: Exclude<CopiedPlatform, null>) => {
-    const copied = await copyTruckShareLink(shareMessage);
+    const url = shareUrl || getTruckShareUrl(truck.slug);
+    const copied = await copyTruckShareContent(truck, url);
     if (!copied) return;
 
     setCopiedPlatform(platform);
@@ -82,7 +81,7 @@ export function TruckShareButtons({ truck, className }: TruckShareButtonsProps) 
           aria-label={`Share ${truck.title} on Instagram`}
         >
           <Instagram className="h-4 w-4" />
-          {copiedPlatform === "instagram" ? "Link copied!" : "Instagram"}
+          {copiedPlatform === "instagram" ? "Copied!" : "Instagram"}
         </button>
 
         <button
@@ -93,11 +92,13 @@ export function TruckShareButtons({ truck, className }: TruckShareButtonsProps) 
           aria-label={`Share ${truck.title} on TikTok`}
         >
           <TikTokIcon />
-          {copiedPlatform === "tiktok" ? "Link copied!" : "TikTok"}
+          {copiedPlatform === "tiktok" ? "Copied!" : "TikTok"}
         </button>
+
+        <TruckCopyShareButton truck={truck} variant="full" />
       </div>
       <p className="text-xs text-muted-foreground">
-        Instagram and TikTok copy the listing link so you can paste it in a post, story, or message.
+        Copy listing includes a short description, truck image link, and URL back to this website.
       </p>
     </div>
   );
