@@ -98,7 +98,7 @@ export function TruckShareButtons({ truck, className }: TruckShareButtonsProps) 
         <TruckCopyShareButton truck={truck} variant="full" />
       </div>
       <p className="text-xs text-muted-foreground">
-        Copy listing includes a short description, truck image link, and URL back to this website.
+        Copy listing includes a short description and link. Sharing the URL shows the truck photo automatically in WhatsApp and social previews.
       </p>
     </div>
   );

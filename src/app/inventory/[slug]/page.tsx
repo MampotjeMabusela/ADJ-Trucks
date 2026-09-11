@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { TruckDetail } from "@/components/TruckDetail";
 import { getAllSlugs, getTruckBySlug } from "@/data/trucks";
 import { getAbsoluteUrl, getSiteUrl } from "@/lib/site-url";
+import { getTruckOgImageMeta, getTruckOgImageUrl } from "@/lib/truck-og";
 import { formatPrice } from "@/lib/utils";
 
 interface PageProps {
@@ -19,7 +20,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   const pageUrl = `${getSiteUrl()}/inventory/${truck.slug}`;
   const description = `${truck.title} - ${formatPrice(truck.price)}. ${truck.description.slice(0, 150)}...`;
-  const ogImageUrl = getAbsoluteUrl(`/inventory/${truck.slug}/opengraph-image`);
+  const ogImage = getTruckOgImageMeta(truck);
 
   return {
     title: truck.title,
@@ -34,16 +35,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       locale: "en_ZA",
       title: `${truck.title} | ADJ TRUCKS`,
       description: truck.description,
-      images: [
-        {
-          url: ogImageUrl,
-          secureUrl: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: truck.title,
-          type: "image/png",
-        },
-      ],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
@@ -51,10 +43,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
       description,
       images: [
         {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: truck.title,
+          url: ogImage.url,
+          width: ogImage.width,
+          height: ogImage.height,
+          alt: ogImage.alt,
         },
       ],
     },
@@ -91,7 +83,7 @@ export default function TruckDetailPage({ params }: PageProps) {
         name: "Albert de Jongh Trucks",
       },
     },
-    image: truck.images.map((image) => getAbsoluteUrl(image)),
+    image: [getTruckOgImageUrl(truck), ...truck.images.slice(1).map((image) => getAbsoluteUrl(image))],
   };
 
   return (

@@ -57,16 +57,13 @@ function escapeHtml(text: string): string {
 }
 
 export function getTruckSharePlainText(truck: Truck, url: string): string {
-  const imageUrl = getTruckShareImageUrl(truck, getSiteOriginFromUrl(url));
-
   return [
     getTruckShareText(truck),
     getTruckShareSummary(truck),
     "",
     getTruckShortDescription(truck),
     "",
-    `View listing: ${url}`,
-    `Image: ${imageUrl}`,
+    url,
   ].join("\n");
 }
 

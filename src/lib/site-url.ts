@@ -20,6 +20,10 @@ export function getSiteUrl(): string {
     return normalizeSiteUrl(configured);
   }
 
+  if (process.env.VERCEL_ENV === "production") {
+    return DEFAULT_SITE_URL;
+  }
+
   const vercelUrl = process.env.VERCEL_URL?.trim();
   if (vercelUrl) {
     return normalizeSiteUrl(`https://${vercelUrl}`);
