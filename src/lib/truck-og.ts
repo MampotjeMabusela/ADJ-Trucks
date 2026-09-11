@@ -1,15 +1,11 @@
 import type { Truck } from "@/types/truck";
 import { getAbsoluteUrl } from "@/lib/site-url";
 
-const TRUCK_OG_WIDTH = 1024;
-const TRUCK_OG_HEIGHT = 472;
-
-function getTruckOgImageType(imagePath: string): string {
-  return imagePath.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
-}
+const OG_WIDTH = 1200;
+const OG_HEIGHT = 630;
 
 export function getTruckOgImageUrl(truck: Truck): string {
-  return getAbsoluteUrl(truck.images[0]);
+  return getAbsoluteUrl(`/og/${truck.slug}.jpg`);
 }
 
 export function getTruckOgImageMeta(truck: Truck) {
@@ -18,9 +14,9 @@ export function getTruckOgImageMeta(truck: Truck) {
   return {
     url,
     secureUrl: url,
-    width: TRUCK_OG_WIDTH,
-    height: TRUCK_OG_HEIGHT,
-    alt: truck.title,
-    type: getTruckOgImageType(truck.images[0]),
+    width: OG_WIDTH,
+    height: OG_HEIGHT,
+    alt: `${truck.title} for sale at ADJ TRUCKS`,
+    type: "image/jpeg",
   };
 }

@@ -19,8 +19,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   if (!truck) return { title: "Vehicle Not Found" };
 
   const pageUrl = `${getSiteUrl()}/inventory/${truck.slug}`;
-  const description = `${truck.title} - ${formatPrice(truck.price)}. ${truck.description.slice(0, 150)}...`;
+  const description = `${truck.title} for sale — ${formatPrice(truck.price)}. ${truck.description.slice(0, 120)}...`;
   const ogImage = getTruckOgImageMeta(truck);
+  const ogTitle = `${truck.title} for Sale | ADJ TRUCKS`;
 
   return {
     title: truck.title,
@@ -33,13 +34,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
       url: pageUrl,
       siteName: "ADJ TRUCKS",
       locale: "en_ZA",
-      title: `${truck.title} | ADJ TRUCKS`,
-      description: truck.description,
+      title: ogTitle,
+      description,
       images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${truck.title} | ADJ TRUCKS`,
+      title: ogTitle,
       description,
       images: [
         {
