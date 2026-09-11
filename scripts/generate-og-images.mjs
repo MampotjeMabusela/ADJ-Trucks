@@ -3,7 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const ROOT = process.cwd();
-const OUT_DIR = path.join(ROOT, "public", "og");
+const OUT_DIR = path.join(ROOT, "public", "images", "og");
 const TRUCKS_FILE = path.join(ROOT, "src", "data", "trucks.ts");
 
 function getTruckImageEntries() {
@@ -29,7 +29,7 @@ async function generateOgImages() {
       .jpeg({ quality: 88, mozjpeg: true })
       .toFile(outputPath);
 
-    console.log(`Generated OG image: /og/${slug}.jpg`);
+    console.log(`Generated OG image: /images/og/${slug}.jpg`);
   }
 }
 
