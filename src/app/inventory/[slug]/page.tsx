@@ -19,7 +19,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   const pageUrl = `${getSiteUrl()}/inventory/${truck.slug}`;
   const description = `${truck.title} - ${formatPrice(truck.price)}. ${truck.description.slice(0, 150)}...`;
-  const ogImageUrl = getAbsoluteUrl(truck.images[0]);
+  const ogImageUrl = getAbsoluteUrl(`/inventory/${truck.slug}/opengraph-image`);
 
   return {
     title: truck.title,
@@ -37,9 +37,11 @@ export function generateMetadata({ params }: PageProps): Metadata {
       images: [
         {
           url: ogImageUrl,
+          secureUrl: ogImageUrl,
           width: 1200,
           height: 630,
           alt: truck.title,
+          type: "image/png",
         },
       ],
     },
@@ -47,7 +49,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
       card: "summary_large_image",
       title: `${truck.title} | ADJ TRUCKS`,
       description,
-      images: [ogImageUrl],
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: truck.title,
+        },
+      ],
     },
   };
 }
