@@ -82,7 +82,7 @@ export const TRUST_BADGES = [
   },
 ] as const;
 
-export const SITE_OG_IMAGE = "/images/og-image.png";
+export const SITE_OG_IMAGE = "/images/og/adj-trucks-logo.jpg";
 
 export const PAGE_BACKGROUNDS = {
   showroom: "/images/backgrounds/showroom.png",

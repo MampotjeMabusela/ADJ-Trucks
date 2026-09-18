@@ -176,6 +176,41 @@ export const trucks: Truck[] = [
       vin: "ADJFVM12H0E901238",
     },
   },
+  {
+    id: "6",
+    slug: "2018-fuso-fk13-240",
+    title: "2018 Fuso FK13-240",
+    make: "Fuso",
+    model: "FK13-240",
+    year: 2018,
+    category: "Tipper",
+    price: 399990,
+    mileage: 325200,
+    images: [
+      "/images/trucks/fuso-fk13-240-2018/01-front-angle.jpg",
+      "/images/trucks/fuso-fk13-240-2018/02-front.jpg",
+      "/images/trucks/fuso-fk13-240-2018/03-side-profile.jpg",
+      "/images/trucks/fuso-fk13-240-2018/04-rear-angle.jpg",
+      "/images/trucks/fuso-fk13-240-2018/05-rear.jpg",
+      "/images/trucks/fuso-fk13-240-2018/06-tipper-body.jpg",
+      "/images/trucks/fuso-fk13-240-2018/07-compliance-plate.jpg",
+      "/images/trucks/fuso-fk13-240-2018/08-interior-odometer.jpg",
+      "/images/trucks/fuso-fk13-240-2018/09-cab-interior.jpg",
+    ],
+    featured: true,
+    status: "available",
+    description:
+      "2018 Fuso FK13-240 tipper with white cab and grey tipper body with wooden side boards. Hydraulic tipper unit in good working condition, ideal for construction, mining, and bulk material transport. Inspected and ready for immediate deployment.",
+    specs: {
+      engine: "6M60 7545cc Turbo Diesel",
+      transmission: "Manual 9-Speed",
+      axles: "4x2",
+      gvm: "13,000 kg",
+      payload: "7,800 kg",
+      fuelType: "Diesel",
+      vin: "MEC2393C0J0022003",
+    },
+  },
 ];
 
 export function getTruckBySlug(slug: string): Truck | undefined {

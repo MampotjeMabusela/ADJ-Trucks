@@ -1,4 +1,5 @@
 import type { Truck } from "@/types/truck";
+import { getTruckOgImageUrl } from "@/lib/truck-og";
 import { getSiteUrl } from "@/lib/site-url";
 import { formatMileage, formatPrice } from "@/lib/utils";
 
@@ -17,12 +18,11 @@ export function getTruckShareUrl(slug: string, origin = getSiteOrigin()): string
 }
 
 export function getTruckShareImageUrl(truck: Truck, origin = getSiteOrigin()): string {
-  const imagePath = truck.images[0];
-  if (/^https?:\/\//i.test(imagePath)) {
-    return imagePath;
+  if (typeof window !== "undefined") {
+    return `${origin.replace(/\/$/, "")}/inventory/${truck.slug}/opengraph-image`;
   }
 
-  return `${origin.replace(/\/$/, "")}${imagePath.startsWith("/") ? imagePath : `/${imagePath}`}`;
+  return getTruckOgImageUrl(truck);
 }
 
 export function getTruckShareText(truck: Truck): string {

@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Chatbot } from "@/components/Chatbot";
 import { COMPANY, SITE_OG_IMAGE } from "@/lib/constants";
-import { getSiteUrl } from "@/lib/site-url";
+import { getAbsoluteUrl, getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -15,6 +15,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const siteUrl = getSiteUrl();
+const siteOgImageUrl = getAbsoluteUrl(SITE_OG_IMAGE);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -46,10 +47,12 @@ export const metadata: Metadata = {
     description: COMPANY.slogan,
     images: [
       {
-        url: SITE_OG_IMAGE,
+        url: siteOgImageUrl,
+        secureUrl: siteOgImageUrl,
         width: 1200,
         height: 630,
         alt: `${COMPANY.name} - ${COMPANY.fullName}`,
+        type: "image/jpeg",
       },
     ],
   },
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${COMPANY.name} | Premium Commercial Vehicles`,
     description: COMPANY.slogan,
-    images: [SITE_OG_IMAGE],
+    images: [siteOgImageUrl],
   },
   robots: {
     index: true,

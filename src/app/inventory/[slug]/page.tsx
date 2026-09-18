@@ -3,11 +3,7 @@ import { notFound } from "next/navigation";
 import { TruckDetail } from "@/components/TruckDetail";
 import { getAllSlugs, getTruckBySlug } from "@/data/trucks";
 import { getAbsoluteUrl, getSiteUrl } from "@/lib/site-url";
-import {
-  getTruckOgImageUrl,
-  getTruckPhotoImageUrl,
-  getTruckSocialPreviewImages,
-} from "@/lib/truck-og";
+import { getTruckOgImageUrl, getTruckPhotoImageUrl } from "@/lib/truck-og";
 import { formatPrice } from "@/lib/utils";
 
 interface PageProps {
@@ -24,8 +20,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   const pageUrl = `${getSiteUrl()}/inventory/${truck.slug}`;
   const description = `${truck.title} for sale — ${formatPrice(truck.price)}. ${truck.description.slice(0, 120)}...`;
-  const ogImages = getTruckSocialPreviewImages(truck);
   const ogTitle = `${truck.title} for Sale | ADJ TRUCKS`;
+  const ogImageUrl = getTruckOgImageUrl(truck);
 
   return {
     title: truck.title,
@@ -40,18 +36,22 @@ export function generateMetadata({ params }: PageProps): Metadata {
       locale: "en_ZA",
       title: ogTitle,
       description,
-      images: ogImages,
+      images: [
+        {
+          url: ogImageUrl,
+          secureUrl: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${truck.title} for sale at ADJ TRUCKS`,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description,
-      images: ogImages.map(({ url, width, height, alt }) => ({
-        url,
-        width,
-        height,
-        alt,
-      })),
+      images: [ogImageUrl],
     },
   };
 }

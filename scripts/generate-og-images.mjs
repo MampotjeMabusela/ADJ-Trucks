@@ -13,6 +13,16 @@ function getTruckImageEntries() {
   return entries.map(([, slug, imagePath]) => ({ slug, imagePath }));
 }
 
+async function generateOgImage(inputPath, outputPath) {
+  await sharp(inputPath)
+    .resize(1200, 630, {
+      fit: "cover",
+      position: "centre",
+    })
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toFile(outputPath);
+}
+
 async function generateOgImages() {
   mkdirSync(OUT_DIR, { recursive: true });
   const trucks = getTruckImageEntries();
@@ -21,16 +31,14 @@ async function generateOgImages() {
     const inputPath = path.join(ROOT, "public", imagePath.replace(/^\//, ""));
     const outputPath = path.join(OUT_DIR, `${slug}.jpg`);
 
-    await sharp(inputPath)
-      .resize(1200, 630, {
-        fit: "cover",
-        position: "centre",
-      })
-      .jpeg({ quality: 88, mozjpeg: true })
-      .toFile(outputPath);
-
+    await generateOgImage(inputPath, outputPath);
     console.log(`Generated OG image: /images/og/${slug}.jpg`);
   }
+
+  const logoInput = path.join(ROOT, "public", "images", "og-image.png");
+  const logoOutput = path.join(OUT_DIR, "adj-trucks-logo.jpg");
+  await generateOgImage(logoInput, logoOutput);
+  console.log("Generated OG image: /images/og/adj-trucks-logo.jpg");
 }
 
 generateOgImages().catch((error) => {
