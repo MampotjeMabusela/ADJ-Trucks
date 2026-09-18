@@ -185,7 +185,7 @@ export const trucks: Truck[] = [
     year: 2018,
     category: "Tipper",
     price: 399990,
-    mileage: 325200,
+    mileage: 333654,
     images: [
       "/images/trucks/fuso-fk13-240-2018/01-front-angle.jpg",
       "/images/trucks/fuso-fk13-240-2018/02-front.jpg",
