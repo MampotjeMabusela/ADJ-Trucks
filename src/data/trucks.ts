@@ -132,7 +132,7 @@ export const trucks: Truck[] = [
     featured: true,
     status: "available",
     description:
-      "2018 Fuso FA 9 flatbed truck with white cab and grey load bed with wooden side boards. Compact and versatile, ideal for construction, agriculture, and local delivery. Inspected and ready for immediate use.",
+      "2018 Fuso FA 9 ideal for construction, agriculture, and local delivery. Inspected and ready for immediate use.",
     specs: {
       engine: "4P10 2999cc Turbo Diesel",
       transmission: "Manual 5-Speed",
@@ -165,7 +165,7 @@ export const trucks: Truck[] = [
     status: "available",
     hideCategory: true,
     description:
-      "2014 Isuzu FVM 1200 tipper with white cab and grey tipper body with wooden side boards. Hydraulic tipper unit in good working condition, ideal for construction, mining, and bulk material transport. Inspected and ready for immediate deployment.",
+      "2014 Isuzu FVM 1200 ideal for construction, mining, and bulk material transport. Inspected and ready for immediate deployment.",
     specs: {
       engine: "6HK1-TCC 7790cc Turbo Diesel",
       transmission: "Manual 6-Speed",
