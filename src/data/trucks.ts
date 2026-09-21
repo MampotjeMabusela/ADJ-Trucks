@@ -200,7 +200,7 @@ export const trucks: Truck[] = [
     featured: true,
     status: "available",
     description:
-      "2018 Fuso FK13-240 tipper with white cab and grey tipper body with wooden side boards. Hydraulic tipper unit in good working condition, ideal for construction, mining, and bulk material transport. Inspected and ready for immediate deployment.",
+      "2018 Fuso FK13-240. Inspected and ready for immediate deployment.",
     specs: {
       engine: "6M60 7545cc Turbo Diesel",
       transmission: "Manual 9-Speed",
