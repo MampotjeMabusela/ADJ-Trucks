@@ -23,7 +23,7 @@ export const trucks: Truck[] = [
     status: "available",
     hideCategory: true,
     description:
-      "2013 Isuzu NQR 500 dropside in solid working condition. White cab with grey dropside body, ideal for construction, logistics, and general haulage. Inspected and ready for immediate delivery.",
+      "2013 Isuzu NQR 500. Inspected and ready for immediate delivery.",
     specs: {
       engine: "4HK1-TC 5193cc Turbo Diesel",
       transmission: "Manual 6-Speed",
@@ -59,7 +59,7 @@ export const trucks: Truck[] = [
     status: "available",
     hideCategory: true,
     description:
-      "2013 Isuzu FTR 850 tipper with white cab and grey tipper body. Hydraulic tipper unit in good working condition, ideal for construction, mining, and bulk material transport. Inspected and ready for immediate deployment.",
+      "2013 Isuzu FTR 850. Inspected and ready for immediate deployment.",
     specs: {
       engine: "6HK1-TCC 7790cc Turbo Diesel",
       transmission: "Manual 6-Speed",
@@ -95,7 +95,7 @@ export const trucks: Truck[] = [
     status: "available",
     hideCategory: true,
     description:
-      "2009 Isuzu FVR 900 box truck with white cab and grey box body. Enclosed cargo box ideal for distribution, logistics, and general freight. Inspected and ready for immediate delivery.",
+      "2009 Isuzu FVR 900. Inspected and ready for immediate delivery.",
     specs: {
       engine: "6HK1-TCC 7790cc Turbo Diesel",
       transmission: "Manual 6-Speed",
