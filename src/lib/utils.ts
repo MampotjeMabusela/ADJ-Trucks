@@ -15,6 +15,7 @@ export function formatPrice(price: number): string {
 }
 
 export function formatMileage(km: number): string {
+  if (km <= 0) return "On request";
   return new Intl.NumberFormat("en-ZA").format(km) + " km";
 }
 

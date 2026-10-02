@@ -211,6 +211,39 @@ export const trucks: Truck[] = [
       vin: "MEC2393C0J0022003",
     },
   },
+  {
+    id: "7",
+    slug: "2016-fuso-canter-fe7-150",
+    title: "2016 Fuso Canter FE7-150",
+    make: "Fuso",
+    model: "Canter FE7-150",
+    year: 2016,
+    category: "Tautliner",
+    price: 289900,
+    mileage: 0,
+    images: [
+      "/images/trucks/fuso-fe7-150-2016/01-front-angle.jpg",
+      "/images/trucks/fuso-fe7-150-2016/02-front.jpg",
+      "/images/trucks/fuso-fe7-150-2016/03-side-profile.jpg",
+      "/images/trucks/fuso-fe7-150-2016/04-side-profile.png",
+      "/images/trucks/fuso-fe7-150-2016/05-rear-angle.jpg",
+      "/images/trucks/fuso-fe7-150-2016/06-rear-angle.jpg",
+      "/images/trucks/fuso-fe7-150-2016/07-rear.png",
+      "/images/trucks/fuso-fe7-150-2016/08-cab-interior.png",
+      "/images/trucks/fuso-fe7-150-2016/09-dashboard.png",
+    ],
+    featured: true,
+    status: "available",
+    description:
+      "2016 Fuso Canter FE7-150. Inspected and ready for immediate delivery.",
+    specs: {
+      engine: "4P10 2998cc Turbo Diesel",
+      transmission: "Duonic 6-Speed",
+      axles: "4x2",
+      gvm: "7,500 kg",
+      fuelType: "Diesel",
+    },
+  },
 ];
 
 export function getTruckBySlug(slug: string): Truck | undefined {

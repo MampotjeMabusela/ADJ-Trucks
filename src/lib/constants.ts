@@ -48,6 +48,7 @@ export const TRUCK_CATEGORIES = [
   "Dropside",
   "Tipper",
   "Box Truck",
+  "Tautliner",
   "Horse",
   "Flatbed",
   "Crane Truck",
