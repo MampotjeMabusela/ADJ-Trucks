@@ -244,6 +244,40 @@ export const trucks: Truck[] = [
       fuelType: "Diesel",
     },
   },
+  {
+    id: "8",
+    slug: "2009-nissan-ud90",
+    title: "2009 Nissan UD90",
+    make: "UD",
+    model: "UD90",
+    year: 2009,
+    category: "Dropside",
+    price: 400000,
+    mileage: 509873,
+    images: [
+      "/images/trucks/nissan-ud90-2009/01-front.jpg",
+      "/images/trucks/nissan-ud90-2009/02-front-angle.jpg",
+      "/images/trucks/nissan-ud90-2009/03-side-profile.jpg",
+      "/images/trucks/nissan-ud90-2009/04-side-profile.jpg",
+      "/images/trucks/nissan-ud90-2009/05-front-angle.jpg",
+      "/images/trucks/nissan-ud90-2009/06-rear-angle.jpg",
+      "/images/trucks/nissan-ud90-2009/07-rear.jpg",
+      "/images/trucks/nissan-ud90-2009/08-rear-angle.jpg",
+      "/images/trucks/nissan-ud90-2009/09-cab-interior.jpg",
+      "/images/trucks/nissan-ud90-2009/10-cab-interior.jpg",
+    ],
+    featured: true,
+    status: "available",
+    description:
+      "2009 Nissan UD90. Inspected and ready for immediate delivery.",
+    specs: {
+      engine: "Diesel",
+      transmission: "Manual",
+      axles: "4x2",
+      gvm: "9,000 kg",
+      fuelType: "Diesel",
+    },
+  },
 ];
 
 export function getTruckBySlug(slug: string): Truck | undefined {
