@@ -9,6 +9,7 @@ import { FilterBar } from "@/components/FilterBar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { COMPANY, PAGE_BACKGROUNDS } from "@/lib/constants";
+import { isFestiveDecorActive } from "@/lib/festive";
 import { trucks } from "@/data/trucks";
 import type { TruckFilters } from "@/types/truck";
 
@@ -67,7 +68,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-gold border border-gold/30 rounded-full bg-gold/5">
-              Since {COMPANY.since} · Pretoria, South Africa
+              {isFestiveDecorActive()
+                ? "Festive season · Wishing you a prosperous New Year"
+                : `Since ${COMPANY.since} · Pretoria, South Africa`}
             </span>
           </motion.div>
 

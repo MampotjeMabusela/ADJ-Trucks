@@ -5,6 +5,7 @@ import { MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FestiveBanner } from "@/components/FestiveDecor";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { COMPANY, NAV_LINKS } from "@/lib/constants";
@@ -49,6 +50,7 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
+      <FestiveBanner />
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex h-24 sm:h-28 md:h-32 items-center justify-between gap-3">
           <Logo size="lg" className="min-w-0 shrink py-1" />

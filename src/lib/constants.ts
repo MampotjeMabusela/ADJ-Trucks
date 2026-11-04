@@ -85,6 +85,15 @@ export const TRUST_BADGES = [
 
 export const SITE_OG_IMAGE = "/images/og/adj-trucks-logo.jpg";
 
+/**
+ * Temporary Christmas / New Year décor (gold-toned to match the site).
+ * To remove in January: set FESTIVE_DECOR_ENABLED to false, or delete
+ * FestiveDecor usage from layout / Navbar / Hero once the season ends.
+ * Also auto-disables after FESTIVE_DECOR_ENDS_AT.
+ */
+export const FESTIVE_DECOR_ENABLED = true;
+export const FESTIVE_DECOR_ENDS_AT = "2027-01-07";
+
 export const PAGE_BACKGROUNDS = {
   showroom: "/images/backgrounds/showroom.png",
   about: "/images/backgrounds/about.jpg",
