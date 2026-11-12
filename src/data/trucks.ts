@@ -241,6 +241,39 @@ export const trucks: Truck[] = [
       fuelType: "Diesel",
     },
   },
+  {
+    id: "9",
+    slug: "2020-hino-300-915",
+    title: "2020 Hino 300 915",
+    make: "Hino",
+    model: "300 915",
+    year: 2020,
+    category: "Box Truck",
+    price: 399900,
+    mileage: 345329,
+    images: [
+      "/images/trucks/hino-300-915-2020/01-front-angle.png",
+      "/images/trucks/hino-300-915-2020/02-front.png",
+      "/images/trucks/hino-300-915-2020/03-side-profile.png",
+      "/images/trucks/hino-300-915-2020/04-side-profile.png",
+      "/images/trucks/hino-300-915-2020/05-front-angle.png",
+      "/images/trucks/hino-300-915-2020/06-rear-angle.png",
+      "/images/trucks/hino-300-915-2020/07-rear-angle.png",
+      "/images/trucks/hino-300-915-2020/08-dashboard.png",
+      "/images/trucks/hino-300-915-2020/09-cab-interior.png",
+    ],
+    featured: true,
+    status: "available",
+    description:
+      "2020 Hino 300 915. Inspected and ready for immediate delivery.",
+    specs: {
+      engine: "N04C Turbo Diesel",
+      transmission: "Manual",
+      axles: "4x2",
+      gvm: "8,500 kg",
+      fuelType: "Diesel",
+    },
+  },
 ];
 
 export function getTruckBySlug(slug: string): Truck | undefined {
